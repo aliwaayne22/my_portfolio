@@ -3,39 +3,40 @@
 
 {% block extra_css %}
 <style>
-    .comments-wrap { background: #fff; border-radius: 10px; border: 1px solid #e5e3de; padding: 28px; margin-bottom: 24px; }
-    .citem { border-left: 3px solid #DE5A14; padding: 10px 16px; margin-bottom: 12px; border-radius: 0 6px 6px 0; background: #F9F6F6; font-size: 13px; color: #1F2020; line-height: 1.6; }
-    .cmeta { font-size: 11px; color: #999; margin-top: 4px; }
-    .cempty { color: #999; font-size: 13px; font-style: italic; text-align: center; padding: 20px 0; }
-    .flabel { font-size: 12px; font-weight: 700; color: #1F2020; margin-bottom: 6px; display: block; margin-top: 16px; letter-spacing: .5px; }
-    .finput { width: 100%; padding: 11px 14px; border-radius: 8px; border: 1.5px solid #ddd; font-size: 13px; font-family: inherit; background: #F9F6F6; color: #1F2020; }
+    .scratch-header { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+    .scratch-badge { background: #1a1a1a; color: #DE5A14; font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 1px; border: 1px solid rgba(222,90,20,.2); }
+    .scratch-sub { font-size: 13px; color: #555; line-height: 1.7; margin-top: -16px; margin-bottom: 28px; }
+    .comments-wrap { background: #111; border: 1px solid #1e1e1e; border-radius: 10px; padding: 28px; margin-bottom: 24px; }
+    .citem { border-left: 3px solid #DE5A14; padding: 12px 16px; margin-bottom: 12px; border-radius: 0 6px 6px 0; background: #0d0d0d; font-size: 13px; color: #F9F6F6; line-height: 1.6; }
+    .cmeta { font-size: 11px; color: #444; margin-top: 4px; }
+    .cempty { color: #444; font-size: 13px; font-style: italic; text-align: center; padding: 24px 0; }
+    .flabel { font-size: 11px; font-weight: 700; color: #666; margin-bottom: 6px; display: block; margin-top: 20px; letter-spacing: 1px; text-transform: uppercase; }
+    .finput { width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid #1e1e1e; font-size: 13px; font-family: inherit; background: #0d0d0d; color: #F9F6F6; }
     .finput:focus { outline: none; border-color: #DE5A14; }
     .pbtn { margin-top: 12px; background: #DE5A14; color: #F9F6F6; border: none; padding: 11px 28px; border-radius: 6px; font-size: 13px; font-weight: 800; cursor: pointer; letter-spacing: .5px; }
-    .login-prompt { background: #fff3f0; border: 1px solid rgba(222,90,20,.3); border-radius: 8px; padding: 16px 20px; text-align: center; margin-top: 20px; }
-    .login-prompt p { font-size: 13px; color: #555; margin-bottom: 10px; }
-    .contact-card { background: #fff; border-radius: 10px; border: 1px solid #e5e3de; padding: 24px; }
-    .contact-row { display: flex; align-items: center; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
-    .contact-label { font-size: 10px; font-weight: 800; color: #888; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+    .login-prompt { background: rgba(222,90,20,.05); border: 1px solid rgba(222,90,20,.15); border-radius: 8px; padding: 20px; text-align: center; margin-top: 20px; }
+    .login-prompt p { font-size: 13px; color: #666; margin-bottom: 14px; }
+    .contact-card { background: #111; border: 1px solid #1e1e1e; border-radius: 10px; padding: 28px; }
+    .contact-row { display: flex; align-items: center; gap: 16px; margin-top: 16px; flex-wrap: wrap; }
+    .contact-label { font-size: 10px; font-weight: 800; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
     .contact-value a { color: #DE5A14; text-decoration: none; font-weight: 700; font-size: 13px; }
-    .contact-divider { width: 1px; height: 32px; background: #e5e3de; }
+    .contact-divider { width: 1px; height: 32px; background: #1e1e1e; }
 
     @media (max-width: 640px) {
-    .contact-row { flex-direction: column; gap: 16px; align-items: flex-start; }
-    .contact-divider { display: none; }
-}
+        .contact-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+        .contact-divider { display: none; }
+    }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="section">
-    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+    <div class="scratch-header">
         <div class="sec-label" style="margin-bottom: 0;">Scratchpad</div>
-        <span style="background: #1F2020; color: #DE5A14; font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 1px;">SEPARATE FROM PORTFOLIO</span>
+        <span class="scratch-badge">SEPARATE FROM PORTFOLIO</span>
     </div>
-    <div class="sec-title">Comments</div>
-    <p style="font-size: 13px; color: #888; line-height: 1.7; margin-top: -20px; margin-bottom: 24px;">
-        This is my scratchpad, a space separate from my main portfolio where visitors can leave comments, questions or feedback. Login required to post.
-    </p>
+    <div class="sec-title">Comments <span>Section</span></div>
+    <p class="scratch-sub">This is my scratchpad, a space separate from my main portfolio where visitors can leave comments, questions or feedback. Login required to post.</p>
 
     <div class="comments-wrap">
         {% for comment in comments %}
@@ -64,7 +65,7 @@
 
     <div class="contact-card">
         <div class="sec-label" style="margin-bottom: 10px;">Connect with me</div>
-        <p style="font-size: 13px; color: #555; line-height: 1.8;">Feel free to reach me directly by email or connect with me on LinkedIn. I would love to hear from you.</p>
+        <p style="font-size: 13px; color: #666; line-height: 1.8;">Feel free to reach me directly by email or connect with me on LinkedIn. I would love to hear from you.</p>
         <div class="contact-row">
             <div>
                 <div class="contact-label">Email</div>

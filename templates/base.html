@@ -6,44 +6,47 @@
     <title>Ali Waayne | {% block title %}Portfolio{% endblock %}</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #F9F6F6; color: #1F2020; overflow-x: hidden; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d0d0d; color: #F9F6F6; overflow-x: hidden; }
 
-        nav { background: #1F2020; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 58px; position: relative; z-index: 100; }
-        .nav-brand { color: #DE5A14; font-size: 20px; font-weight: 800; letter-spacing: 2px; text-decoration: none; }
-
-        .nav-links { display: flex; gap: 2px; align-items: center; }
-        .nav-link { color: #b0aeae; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; letter-spacing: .5px; transition: all .2s; }
-        .nav-link:hover { color: #F9F6F6; background: rgba(222,90,20,.15); }
-        .nav-link.active { color: #F9F6F6; background: #DE5A14; }
-        .nav-auth { color: #F9F6F6; padding: 7px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; border: 1.5px solid #DE5A14; margin-left: 8px; letter-spacing: .5px; }
-        .nav-auth:hover { background: #DE5A14; }
+        nav { background: rgba(13,13,13,.97); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 60px; border-bottom: 1px solid rgba(222,90,20,.15); position: sticky; top: 0; z-index: 100; }
+        .nav-brand { color: #DE5A14; font-size: 22px; font-weight: 800; letter-spacing: 2px; text-decoration: none; }
+        .nav-links { display: flex; gap: 4px; align-items: center; }
+        .nav-link { color: #888; padding: 8px 18px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; letter-spacing: .5px; transition: color .2s; }
+        .nav-link:hover { color: #F9F6F6; }
+        .nav-link.active { color: #DE5A14; }
+        .nav-auth { color: #DE5A14; padding: 7px 18px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; border: 1.5px solid #DE5A14; margin-left: 8px; letter-spacing: .5px; transition: all .2s; }
+        .nav-auth:hover { background: #DE5A14; color: #F9F6F6; }
 
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
-        .hamburger span { display: block; width: 22px; height: 2px; background: #DE5A14; border-radius: 2px; transition: all .3s; }
-
-        .mobile-menu { display: none; background: #1F2020; border-top: 1px solid rgba(222,90,20,.2); }
+        .hamburger span { display: block; width: 22px; height: 2px; background: #DE5A14; border-radius: 2px; }
+        .mobile-menu { display: none; background: #111; border-top: 1px solid rgba(222,90,20,.15); }
         .mobile-menu.open { display: block; }
-        .mobile-link { display: block; padding: 14px 24px; color: #b0aeae; font-size: 14px; font-weight: 600; text-decoration: none; border-left: 3px solid transparent; }
-        .mobile-link:hover { color: #F9F6F6; background: rgba(222,90,20,.1); }
-        .mobile-link.active { color: #F9F6F6; border-left-color: #DE5A14; background: rgba(222,90,20,.1); }
+        .mobile-link { display: block; padding: 14px 24px; color: #888; font-size: 14px; font-weight: 600; text-decoration: none; border-left: 3px solid transparent; }
+        .mobile-link:hover { color: #F9F6F6; background: rgba(222,90,20,.05); }
+        .mobile-link.active { color: #DE5A14; border-left-color: #DE5A14; }
         .mobile-auth { display: block; padding: 14px 24px; color: #DE5A14; font-size: 14px; font-weight: 700; text-decoration: none; border-top: 1px solid rgba(222,90,20,.15); }
 
-        .section { max-width: 800px; margin: 0 auto; padding: 44px 24px; }
-        .sec-label { font-size: 10px; font-weight: 800; color: #DE5A14; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 4px; }
-        .sec-title { font-size: 24px; font-weight: 800; color: #1F2020; margin-bottom: 28px; padding-bottom: 10px; border-bottom: 2px solid #DE5A14; display: inline-block; }
-        .btn { padding: 10px 22px; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; border: none; letter-spacing: .5px; text-decoration: none; display: inline-block; }
-        .btn-primary { background: #DE5A14; color: #F9F6F6; }
-        .btn-outline { background: transparent; color: #F9F6F6; border: 2px solid #DE5A14; }
-        .btn:hover { opacity: .85; }
+        .section { max-width: 900px; margin: 0 auto; padding: 56px 40px; }
+        .sec-label { font-size: 10px; font-weight: 800; color: #DE5A14; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; }
+        .sec-title { font-size: 28px; font-weight: 800; color: #F9F6F6; margin-bottom: 32px; }
+        .sec-title span { color: #DE5A14; }
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(222,90,20,.3), transparent); margin: 0 40px; }
 
-        footer { background: #1F2020; color: #555; text-align: center; padding: 20px 24px; font-size: 11px; letter-spacing: .5px; }
+        .btn { padding: 11px 24px; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; border: none; letter-spacing: .5px; text-decoration: none; display: inline-block; transition: opacity .2s; }
+        .btn:hover { opacity: .85; }
+        .btn-primary { background: #DE5A14; color: #F9F6F6; }
+        .btn-ghost { background: transparent; color: #F9F6F6; border: 1.5px solid rgba(255,255,255,.2); }
+        .btn-dark { background: #1a1a1a; color: #F9F6F6; border: 1px solid #333; }
+
+        footer { background: #080808; color: #444; text-align: center; padding: 24px; font-size: 11px; border-top: 1px solid #111; letter-spacing: .5px; }
         footer span { color: #DE5A14; }
 
         @media (max-width: 640px) {
+            nav { padding: 0 20px; }
             .nav-links { display: none; }
             .hamburger { display: flex; }
-            .section { padding: 28px 16px; }
-            .sec-title { font-size: 20px; }
+            .section { padding: 36px 20px; }
+            .divider { margin: 0 20px; }
         }
     </style>
     {% block extra_css %}{% endblock %}
@@ -63,7 +66,7 @@
             <a class="nav-auth" href="{{ url_for('login') }}">Log in</a>
         {% endif %}
     </div>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <button class="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
     </button>
 </nav>
@@ -89,10 +92,8 @@
 
 <script>
 function toggleMenu(){
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('open');
+    document.getElementById('mobile-menu').classList.toggle('open');
 }
 </script>
-
 </body>
 </html>

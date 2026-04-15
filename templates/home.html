@@ -3,108 +3,134 @@
 
 {% block extra_css %}
 <style>
-    .hero { background: #1F2020; padding: 64px 28px 56px; text-align: center; border-bottom: 3px solid #DE5A14; }
-    .avatar { width: 96px; height: 96px; border-radius: 50%; background: #DE5A14; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 800; color: #F9F6F6; margin: 0 auto 20px; border: 3px solid #F9F6F6; }
-    .hero-name { font-size: 34px; font-weight: 800; color: #F9F6F6; letter-spacing: 1px; }
-    .hero-role { font-size: 12px; color: #DE5A14; letter-spacing: 3px; text-transform: uppercase; margin: 8px 0 6px; font-weight: 700; }
-    .hero-location { font-size: 13px; color: #888; margin-bottom: 20px; }
-    .hero-bio { font-size: 14px; color: #b5b3b3; max-width: 560px; margin: 0 auto 28px; line-height: 1.85; }
-    .hero-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-    .hero-badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
-    .badge { background: rgba(222,90,20,.15); color: #DE5A14; border: 1px solid rgba(222,90,20,.3); padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: .5px; }
-    .skills-section { background: #1F2020; padding: 36px 0; }
-    .skills-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-    .skills-inner .sec-title { color: #F9F6F6; }
-    .skill-group { margin-bottom: 20px; }
-    .skill-group-title { font-size: 11px; font-weight: 700; color: #888; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .skill-tag { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+    .hero { padding: 80px 40px 60px; display: flex; align-items: center; gap: 48px; max-width: 900px; margin: 0 auto; }
+    .hero-left { flex: 1; }
+    .open-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(222,90,20,.08); border: 1px solid rgba(222,90,20,.2); border-radius: 20px; padding: 6px 14px; font-size: 11px; color: #DE5A14; font-weight: 700; margin-bottom: 20px; letter-spacing: .5px; }
+    .open-dot { width: 7px; height: 7px; border-radius: 50%; background: #DE5A14; }
+    .hero-greeting { font-size: 12px; color: #666; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+    .hero-greeting span { color: #DE5A14; }
+    .hero-headline { font-size: 38px; font-weight: 800; line-height: 1.2; margin-bottom: 8px; color: #F9F6F6; }
+    .hero-headline span { color: #DE5A14; border-bottom: 2px solid #DE5A14; padding-bottom: 2px; }
+    .hero-sub { font-size: 13px; color: #555; margin-bottom: 24px; font-style: italic; }
+    .hero-bio { font-size: 14px; color: #888; line-height: 1.85; margin-bottom: 28px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+    .htag { background: rgba(222,90,20,.1); color: #DE5A14; border: 1px solid rgba(222,90,20,.25); padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+    .hero-right { width: 180px; flex-shrink: 0; text-align: center; }
+    .avatar-ring { width: 160px; height: 160px; border-radius: 50%; border: 2px solid rgba(222,90,20,.3); display: flex; align-items: center; justify-content: center; margin: 0 auto; position: relative; }
+    .avatar-ring:before { content: ""; position: absolute; inset: -8px; border-radius: 50%; border: 1px solid rgba(222,90,20,.1); }
+    .avatar-inner { width: 130px; height: 130px; border-radius: 50%; background: #1a1a1a; display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 800; color: #DE5A14; }
+    .avatar-label { font-size: 10px; color: #444; margin-top: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+    .intro-section { max-width: 900px; margin: 0 auto; padding: 0 40px 56px; }
+    .intro-card { background: #111; border: 1px solid #1e1e1e; border-radius: 12px; padding: 36px; border-left: 3px solid #DE5A14; }
+    .intro-text { font-size: 14px; color: #888; line-height: 1.85; margin-bottom: 14px; }
+    .intro-btns { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+
+    .stack-section { background: #0a0a0a; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; }
+    .skill-group { margin-bottom: 24px; }
+    .skill-group-label { font-size: 10px; font-weight: 700; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+    .skill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stag { padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; letter-spacing: .5px; }
     .st-hot { background: #DE5A14; color: #F9F6F6; }
-    .st-mid { background: #2e2e2e; color: #F9F6F6; border: 1px solid #444; }
-    .st-light { background: transparent; color: #b0aeae; border: 1px solid #555; }
-    
+    .st-mid { background: #1a1a1a; color: #F9F6F6; border: 1px solid #2a2a2a; }
+    .st-dim { background: transparent; color: #444; border: 1px solid #1e1e1e; }
+
     @media (max-width: 640px) {
-    .hero { padding: 40px 16px 36px; }
-    .hero-name { font-size: 26px; }
-    .hero-bio { font-size: 13px; }
-    .hero-btns { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px; }
-    .hero-btns .btn:first-child { flex: 0 0 100%; text-align: center; }
-    .hero-btns .btn:not(:first-child) { flex: 1; text-align: center; min-width: 120px; }
-    .skills-inner { padding: 0 16px; }
-    .skill-tags { gap: 6px; }
-}
+        .hero { flex-direction: column-reverse; padding: 40px 20px; gap: 24px; }
+        .hero-right { width: 100%; }
+        .hero-headline { font-size: 28px; }
+        .hero-btns { flex-direction: row; flex-wrap: wrap; }
+        .hero-btns .btn:first-child { flex: 0 0 100%; text-align: center; }
+        .hero-btns .btn:not(:first-child) { flex: 1; text-align: center; }
+        .intro-section { padding: 0 20px 40px; }
+        .intro-card { padding: 24px; }
+    }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="hero">
-    <div class="avatar">AW</div>
-    <div class="hero-name">Ali Waayne</div>
-    <div class="hero-role">Aspiring Junior DevOps &amp; Cloud Engineer</div>
-    <div class="hero-location">Singapore &nbsp;·&nbsp; Open to Work</div>
-    <div class="hero-bio">DevOps and cloud practitioner trained in Microsoft Azure, Terraform, Docker and CI/CD pipelines through Generation Singapore. Bringing 8+ years of client-facing experience and a drive to build scalable, reliable and well-automated systems.</div>
-    <div class="hero-btns">
-        <a class="btn btn-primary" href="{{ url_for('about') }}">Who am I?</a>
-        <a class="btn btn-outline" href="{{ url_for('projects') }}">View Projects</a>
-        <a class="btn btn-outline" href="{{ url_for('comments') }}">Get in Touch</a>
+    <div class="hero-left">
+        <div class="open-pill"><div class="open-dot"></div>Open to Work</div>
+        <div class="hero-greeting">Hello! I am <span>Ali Waayne</span></div>
+        <div class="hero-headline">
+            From closing deals<br>to closing <span>pull requests.</span>
+        </div>
+        <div class="hero-sub">Because the best negotiation is a clean deployment.</div>
+        <div class="hero-bio">DevOps and cloud practitioner trained in Microsoft Azure, Terraform, Docker and CI/CD pipelines through Generation Singapore. Bringing 8+ years of client-facing experience into building scalable, reliable and well-automated systems.</div>
+        <div class="hero-btns">
+            <a class="btn btn-primary" href="{{ url_for('about') }}">Who am I?</a>
+            <a class="btn btn-ghost" href="{{ url_for('projects') }}">View Projects</a>
+        </div>
+        <div class="hero-tags">
+            <span class="htag">Azure</span>
+            <span class="htag">Terraform</span>
+            <span class="htag">Docker</span>
+            <span class="htag">CI/CD</span>
+            <span class="htag">Python</span>
+            <span class="htag">Linux</span>
+        </div>
     </div>
-    <div class="hero-badges">
-        <span class="badge">Azure</span>
-        <span class="badge">Terraform</span>
-        <span class="badge">Docker</span>
-        <span class="badge">CI/CD</span>
-        <span class="badge">Python</span>
-        <span class="badge">Linux</span>
+    <div class="hero-right">
+        <div class="avatar-ring">
+            <div class="avatar-inner">AW</div>
+        </div>
+        <div class="avatar-label">Photo coming soon</div>
     </div>
 </div>
-<div style="background: #F9F6F6; padding: 44px 0;">
-    <div style="max-width: 800px; margin: 0 auto; padding: 0 24px;">
+
+<div class="divider"></div>
+
+<div class="intro-section">
+    <div class="section" style="padding-bottom: 24px; padding-top: 48px;">
         <div class="sec-label">Introduction</div>
-        <div class="sec-title">Portfolio of Works</div>
-        <p style="font-size: 14px; color: #444; line-height: 1.85; max-width: 640px; margin-bottom: 20px;">
-    Welcome to my portfolio. This site documents my transition into the IT industry and serves as a living record of the projects I have built, the skills I have developed, and the tools I have worked with through my DevOps and Cloud Engineering training at Generation Singapore in partnership with Microsoft and Temasek Polytechnic.
-</p>
-<p style="font-size: 14px; color: #444; line-height: 1.85; max-width: 640px; margin-bottom: 28px;">
-    Each project here represents real hands-on work. From provisioning cloud infrastructure on Microsoft Azure using Terraform and Docker, to building and deploying this website using Python, Flask and SQLite with full login security and database integration. I am actively seeking entry-level DevOps, Cloud and Infrastructure roles where I can contribute and grow in a real-world engineering environment. Use the navigation above to explore my projects, learn more about my background, or leave a message on my scratchpad.
-</p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <div class="sec-title">Portfolio of <span>Works</span></div>
+    </div>
+    <div class="intro-card">
+        <div class="intro-text">Welcome to my portfolio. This site documents my transition into the IT industry and serves as a living record of the projects I have built, the skills I have developed, and the tools I have worked with through my DevOps and Cloud Engineering training at Generation Singapore in partnership with Microsoft and Temasek Polytechnic.</div>
+        <div class="intro-text">Each project here represents real hands-on work. From provisioning cloud infrastructure on Microsoft Azure using Terraform and Docker, to building and deploying this website using Python, Flask and SQLite with full login security and database integration. I am actively seeking entry-level DevOps, Cloud and Infrastructure roles where I can contribute and grow in a real-world engineering environment. Use the navigation above to explore my projects, learn more about my background, or leave a message on my scratchpad.</div>
+        <div class="intro-btns">
             <a class="btn btn-primary" href="{{ url_for('projects') }}">View Projects</a>
-            <a class="btn" style="background: #1F2020; color: #F9F6F6;" href="{{ url_for('about') }}">About Me</a>
+            <a class="btn btn-dark" href="{{ url_for('about') }}">About Me</a>
         </div>
     </div>
 </div>
-<div class="skills-section">
-    <div class="skills-inner">
+
+<div class="divider"></div>
+
+<div class="stack-section">
+    <div class="section">
         <div class="sec-label">What I work with</div>
-        <div class="sec-title">Tech Stack</div>
+        <div class="sec-title">Tech <span>Stack</span></div>
         <div class="skill-group">
-            <div class="skill-group-title">Cloud &amp; Infrastructure</div>
-            <div class="skill-tags">
-                <span class="skill-tag st-hot">Microsoft Azure</span>
-                <span class="skill-tag st-hot">Terraform</span>
-                <span class="skill-tag st-hot">Infrastructure as Code</span>
-                <span class="skill-tag st-mid">Virtual Networks</span>
-                <span class="skill-tag st-mid">Azure Identity &amp; Access</span>
+            <div class="skill-group-label">Cloud and Infrastructure</div>
+            <div class="skill-row">
+                <span class="stag st-hot">Microsoft Azure</span>
+                <span class="stag st-hot">Terraform</span>
+                <span class="stag st-hot">Infrastructure as Code</span>
+                <span class="stag st-mid">Virtual Networks</span>
+                <span class="stag st-mid">Azure Identity and Access</span>
             </div>
         </div>
         <div class="skill-group">
-            <div class="skill-group-title">DevOps &amp; Automation</div>
-            <div class="skill-tags">
-                <span class="skill-tag st-hot">Docker</span>
-                <span class="skill-tag st-hot">CI/CD Pipelines</span>
-                <span class="skill-tag st-hot">Git / GitHub</span>
-                <span class="skill-tag st-mid">Containerization</span>
-                <span class="skill-tag st-mid">Agile Methodology</span>
+            <div class="skill-group-label">DevOps and Automation</div>
+            <div class="skill-row">
+                <span class="stag st-hot">Docker</span>
+                <span class="stag st-hot">CI/CD Pipelines</span>
+                <span class="stag st-hot">Git / GitHub</span>
+                <span class="stag st-mid">Containerization</span>
+                <span class="stag st-mid">Agile Methodology</span>
             </div>
         </div>
         <div class="skill-group">
-            <div class="skill-group-title">Scripting &amp; Systems</div>
-            <div class="skill-tags">
-                <span class="skill-tag st-mid">Python</span>
-                <span class="skill-tag st-mid">Bash / Shell</span>
-                <span class="skill-tag st-mid">Linux CLI</span>
-                <span class="skill-tag st-light">Flask</span>
-                <span class="skill-tag st-light">SQL / SQLite</span>
+            <div class="skill-group-label">Scripting and Systems</div>
+            <div class="skill-row">
+                <span class="stag st-mid">Python</span>
+                <span class="stag st-mid">Bash / Shell</span>
+                <span class="stag st-mid">Linux CLI</span>
+                <span class="stag st-dim">Flask</span>
+                <span class="stag st-dim">SQL / SQLite</span>
             </div>
         </div>
     </div>
