@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+
+{% block extra_css %}
+<style>
+    .open-badge { background: rgba(222,90,20,.1); border: 1px solid rgba(222,90,20,.3); border-radius: 6px; padding: 12px 16px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+    .open-dot { width: 8px; height: 8px; border-radius: 50%; background: #DE5A14; flex-shrink: 0; }
+    .open-text { font-size: 12px; color: #DE5A14; font-weight: 700; }
+    .open-sub { font-size: 11px; color: #888; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+    .acard { background: #fff; border-radius: 10px; border: 1px solid #e5e3de; padding: 20px; border-top: 3px solid #DE5A14; }
+    .acard h3 { font-size: 10px; font-weight: 800; color: #DE5A14; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .acard p { font-size: 13px; color: #444; line-height: 1.75; }
+    .acard ul { list-style: none; padding: 0; }
+    .acard ul li { font-size: 13px; color: #444; padding: 3px 0 3px 16px; position: relative; line-height: 1.5; }
+    .acard ul li:before { content: "›"; position: absolute; left: 0; color: #DE5A14; font-weight: 800; font-size: 15px; line-height: 1.2; }
+    .timeline { margin-bottom: 0; }
+    .titem { display: flex; gap: 16px; margin-bottom: 24px; position: relative; }
+    .titem:before { content: ""; position: absolute; left: 19px; top: 38px; bottom: -24px; width: 1px; background: #e5e3de; }
+    .titem:last-child:before { display: none; }
+    .tdot { width: 38px; height: 38px; border-radius: 50%; background: #DE5A14; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #F9F6F6; flex-shrink: 0; }
+    .tcontent { flex: 1; padding-top: 6px; }
+    .ttitle { font-size: 15px; font-weight: 800; color: #1F2020; margin-bottom: 2px; }
+    .torg { font-size: 13px; color: #DE5A14; font-weight: 600; margin-bottom: 2px; }
+    .tdate { font-size: 11px; color: #999; margin-bottom: 8px; letter-spacing: .5px; }
+    .tdesc { font-size: 13px; color: #555; line-height: 1.65; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="section">
+    <div class="sec-label">Get to know me</div>
+    <div class="sec-title">About Me</div>
+
+    <div class="open-badge">
+        <div class="open-dot"></div>
+        <div>
+            <div class="open-text">Open to Work</div>
+            <div class="open-sub">Cloud Support Engineer &nbsp;·&nbsp; DevOps Engineer &nbsp;·&nbsp; Sales Engineer &nbsp;·&nbsp; Junior DevOps</div>
+        </div>
+    </div>
+
+    <div class="about-grid">
+        <div class="acard">
+            <h3>Background</h3>
+            <p>DevOps and cloud practitioner trained through Generation Singapore in partnership with Microsoft and Temasek Polytechnic. Brings 8+ years of experience in client-facing, high-pressure environments — now channelling those skills into building scalable cloud systems.</p>
+        </div>
+        <div class="acard">
+            <h3>Currently Learning</h3>
+            <ul>
+                <li>Cloud infrastructure on Microsoft Azure</li>
+                <li>CI/CD pipeline automation</li>
+                <li>Container orchestration with Docker</li>
+                <li>Infrastructure as Code with Terraform</li>
+                <li>Python &amp; Bash scripting</li>
+                <li>Agile team development</li>
+            </ul>
+        </div>
+        <div class="acard">
+            <h3>Education &amp; Training</h3>
+            <ul>
+                <li>DevOps &amp; Cloud Programme — Generation Singapore</li>
+                <li>In partnership with Microsoft &amp; Temasek Polytechnic</li>
+                <li>Diploma in Integrated Events Management — Republic Polytechnic</li>
+            </ul>
+        </div>
+        <div class="acard">
+            <h3>Languages</h3>
+            <ul>
+                <li>English — Fluent</li>
+                <li>Malay — Basic</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sec-label">Career Journey</div>
+    <div class="sec-title">Experience</div>
+    <div class="timeline">
+        <div class="titem">
+            <div class="tdot">GS</div>
+            <div class="tcontent">
+                <div class="ttitle">DevOps &amp; Cloud Engineer (Trainee)</div>
+                <div class="torg">Generation Singapore · Full-time</div>
+                <div class="tdate">MAR 2026 – JUN 2026 · Singapore · Remote</div>
+                <div class="tdesc">Built and deployed Azure cloud infrastructure using Terraform (IaC). Containerised applications using Docker. Developed CI/CD pipelines to automate build and deployment workflows. Worked in Agile teams using Git and GitHub for version control.</div>
+            </div>
+        </div>
+        <div class="titem">
+            <div class="tdot">PN</div>
+            <div class="tcontent">
+                <div class="ttitle">Associate Director</div>
+                <div class="torg">PropNex Realty Pte Ltd · Full-time</div>
+                <div class="tdate">OCT 2022 – PRESENT · Singapore</div>
+                <div class="tdesc">Managed end-to-end property transactions for 30+ clients. Led high-stakes negotiations in time-sensitive environments. Mentored new agents on processes and client management. Awards: Growth Award (2025), Gold Achiever Award (2024).</div>
+            </div>
+        </div>
+        <div class="titem">
+            <div class="tdot">AIA</div>
+            <div class="tcontent">
+                <div class="ttitle">Financial Services Consultant</div>
+                <div class="torg">AIA Singapore · Full-time</div>
+                <div class="tdate">MAY 2019 – OCT 2022 · Singapore</div>
+                <div class="tdesc">Advised clients on comprehensive financial planning. Managed a portfolio of clients while consistently achieving top-tier targets. Awards: MDRT Gold (2019), Headstart Qualifier (2019), Hawaii Convention 2020.</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

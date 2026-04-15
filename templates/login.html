@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block extra_css %}
+<style>
+    .login-wrap { max-width: 400px; margin: 60px auto; padding: 0 24px; }
+    .login-card { background: #fff; border-radius: 10px; border: 1px solid #e5e3de; padding: 36px; border-top: 4px solid #DE5A14; }
+    .error-box { background: #fff3f0; border: 1px solid #DE5A14; border-radius: 6px; padding: 10px 16px; margin-bottom: 20px; font-size: 13px; color: #DE5A14; font-weight: 600; }
+    .flabel { font-size: 12px; font-weight: 700; color: #1F2020; margin-bottom: 6px; display: block; margin-top: 16px; letter-spacing: .5px; }
+    .finput { width: 100%; padding: 11px 14px; border-radius: 8px; border: 1.5px solid #ddd; font-size: 13px; font-family: inherit; background: #F9F6F6; color: #1F2020; }
+    .finput:focus { outline: none; border-color: #DE5A14; }
+    .pbtn { margin-top: 20px; width: 100%; background: #DE5A14; color: #F9F6F6; border: none; padding: 12px; border-radius: 6px; font-size: 14px; font-weight: 800; cursor: pointer; letter-spacing: .5px; }
+    .pbtn:hover { opacity: .88; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="login-wrap">
+    <div class="sec-label" style="text-align:center; margin-bottom: 6px;">Welcome back</div>
+    <div class="login-card">
+        {% if error %}
+            <div class="error-box">{{ error }}</div>
+        {% endif %}
+        <form method="POST">
+            <label class="flabel">Username</label>
+            <input class="finput" type="text" name="username" placeholder="Enter your username" required>
+            <label class="flabel">Password</label>
+            <input class="finput" type="password" name="password" placeholder="Enter your password" required>
+            <button class="pbtn" type="submit">Log in</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

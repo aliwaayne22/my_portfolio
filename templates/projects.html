@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Projects{% endblock %}
+
+{% block extra_css %}
+<style>
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+    .pcard { background: #fff; border-radius: 10px; border: 1px solid #e5e3de; padding: 22px; border-top: 4px solid #DE5A14; }
+    .pcard:hover { border-top-color: #1F2020; }
+    .pnum { font-size: 10px; font-weight: 800; color: #DE5A14; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .ptitle { font-size: 15px; font-weight: 800; color: #1F2020; margin-bottom: 8px; }
+    .pdesc { font-size: 12px; color: #666; line-height: 1.65; margin-bottom: 14px; }
+    .ptags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .ptag { background: #F9F6F6; border: 1px solid #ddd; color: #1F2020; padding: 3px 9px; border-radius: 10px; font-size: 10px; font-weight: 700; }
+
+    @media (max-width: 640px) {
+    .proj-grid { grid-template-columns: 1fr; }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="section">
+    <div class="sec-label">What I've built</div>
+    <div class="sec-title">Projects</div>
+   <div class="proj-grid">
+    <div class="pcard">
+        <div class="pnum">Project 01</div>
+        <div class="ptitle">Largest Series Product — Signal Analyser</div>
+        <div class="pdesc">A Python CLI tool built to analyse encrypted numeric signal sequences and identify the largest product. Includes full error handling, input validation, and interactive user input.</div>
+        <div class="ptags">
+            <span class="ptag">Python</span><span class="ptag">CLI</span><span class="ptag">Error Handling</span><span class="ptag">Linux</span>
+        </div>
+    </div>
+    <div class="pcard">
+        <div class="pnum">Project 02</div>
+        <div class="ptitle">Portfolio Web App</div>
+        <div class="pdesc">A multi-page database-backed portfolio website built with Flask and SQLite, version-controlled with Git and hosted on PythonAnywhere. Features login security and a live comments section.</div>
+        <div class="ptags">
+            <span class="ptag">Python</span><span class="ptag">Flask</span><span class="ptag">SQLite</span><span class="ptag">Git</span><span class="ptag">PythonAnywhere</span>
+        </div>
+    </div>
+    <div class="pcard">
+        <div class="pnum">Project 03</div>
+        <div class="ptitle">Containerised Flask App</div>
+        <div class="pdesc">Containerised the portfolio web app using Docker. Built a Docker image, ran it locally and pushed it to Docker Hub making it portable and deployable anywhere.</div>
+        <div class="ptags">
+            <span class="ptag">Docker</span><span class="ptag">Containerisation</span><span class="ptag">Docker Hub</span><span class="ptag">Flask</span><span class="ptag">DevOps</span>
+        </div>
+    </div>
+    <div class="pcard">
+        <div class="pnum">Project 04</div>
+        <div class="ptitle">Cloud Infrastructure Deployment with CI/CD</div>
+        <div class="pdesc">Designed and deployed a cloud environment on Microsoft Azure using IaC principles. Provisioned virtual networks, VMs, and storage using Terraform. Built a CI/CD pipeline to automate build and deployment workflows.</div>
+        <div class="ptags">
+            <span class="ptag">Azure</span><span class="ptag">Terraform</span><span class="ptag">Docker</span><span class="ptag">CI/CD</span><span class="ptag">Bash</span><span class="ptag">Python</span>
+        </div>
+    </div>
+    <div class="pcard" style="border-top-color: #ddd;">
+        <div class="pnum" style="color: #bbb;">Project 05</div>
+        <div class="ptitle" style="color: #bbb;">Coming Soon</div>
+        <div class="pdesc" style="color: #bbb;">More projects on the way as the programme continues. Watch this space.</div>
+        <div class="ptags"><span class="ptag" style="color: #bbb; border-color: #ddd;">In Progress</span></div>
+    </div>
+</div>
+</div>
+{% endblock %}
