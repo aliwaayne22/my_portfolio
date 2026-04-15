@@ -3,7 +3,7 @@
 
 {% block extra_css %}
 <style>
-    .hero { padding: 60px 40px; display: flex; flex-direction: row; align-items: center !important; gap: 40px; max-width: 1100px; margin: 0 auto; width: 100%; }
+    .hero { padding: 60px 80px; display: flex; flex-direction: row; align-items: center !important; gap: 40px; max-width: 100%; margin: 0 auto; width: 100%; }
     .hero-left { flex: 1; min-width: 0; }
     .hero-right { flex-shrink: 0; text-align: center; }
     .open-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(222,90,20,.08); border: 1px solid rgba(222,90,20,.2); border-radius: 20px; padding: 6px 14px; font-size: 11px; color: #DE5A14; font-weight: 700; margin-bottom: 20px; letter-spacing: .5px; }
@@ -20,8 +20,8 @@
     .avatar-ring { width: 220px; height: 220px; border-radius: 50%; border: none; display: flex; align-items: center; justify-content: center; margin: 0 auto; position: relative; overflow: hidden; box-shadow: 0 0 0 6px #0d0d0d, 0 0 0 8px rgba(222,90,20,.6); }
     .avatar-ring:before { content: ""; position: absolute; inset: -10px; border-radius: 50%; border: 1.5px solid rgba(222,90,20,.4); z-index: 2; pointer-events: none; }
 
-    .intro-section { max-width: 1100px; margin: 0 auto; padding: 0 40px 56px; }
-    .intro-card { background: #111; border: 1px solid #1e1e1e; border-radius: 12px; padding: 36px; border-left: 3px solid #DE5A14; }
+    .intro-section { max-width: 100%; margin: 0 auto; padding: 0 80px 56px; }
+    .intro-card { background: #111; border: 1px solid #1e1e1e; border-radius: 12px; padding: 36px; border-left: 3px solid #DE5A14; margin-top: 16px; }
     .intro-text { font-size: 14px; color: #888; line-height: 1.85; margin-bottom: 14px; }
     .intro-btns { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
 
@@ -79,11 +79,9 @@
 
 <div class="divider"></div>
 
-<div class="intro-section">
-    <div class="section" style="padding-bottom: 12px; padding-top: 48px;">
-        <div class="sec-label">Introduction</div>
-        <div class="sec-title">Portfolio of <span>Works</span></div>
-    </div>
+<div class="section" style="padding-top: 32px; padding-bottom: 56px; padding-left: 40px; padding-right: 40px;">
+    <div class="sec-label">Introduction</div>
+    <div class="sec-title">Portfolio of <span>Works</span></div>
     <div class="intro-card">
         <div class="intro-text">Welcome to my portfolio. This site documents my transition into the IT industry and serves as a living record of the projects I have built, the skills I have developed, and the tools I have worked with through my DevOps and Cloud Engineering training at Generation Singapore in partnership with Microsoft and Temasek Polytechnic.</div>
         <div class="intro-text">Each project here represents real hands-on work. From provisioning cloud infrastructure on Microsoft Azure using Terraform and Docker, to building and deploying this website using Python, Flask and SQLite with full login security and database integration. I am actively seeking entry-level DevOps, Cloud and Infrastructure roles where I can contribute and grow in a real-world engineering environment. Use the navigation above to explore my projects, learn more about my background, or leave a message on my scratchpad.</div>
