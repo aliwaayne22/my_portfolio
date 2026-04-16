@@ -30,6 +30,9 @@
         .titem { gap: 12px; }
         .tcontent { padding: 16px; }
     }
+    .tbullets { list-style: none; padding: 0; margin-top: 8px; }
+    .tbullets li { font-size: 13px; color: #777; padding: 3px 0 3px 16px; position: relative; line-height: 1.6; }
+    .tbullets li:before { content: "›"; position: absolute; left: 0; color: #DE5A14; font-weight: 800; font-size: 15px; line-height: 1.2; }
 </style>
 {% endblock %}
 
@@ -63,8 +66,9 @@
         <div class="acard">
             <h3>Education and Training</h3>
             <ul>
-                <li>DevOps and Cloud Programme — Generation Singapore</li>
-                <li>In partnership with Microsoft and Temasek Polytechnic</li>
+                <li>DevOps and Cloud Programme — Generation Singapore in partnership with Microsoft and Temasek Polytechnic</li>
+                <li>Private Hire Car Driver’s Vocational Licence (PDVL) — NTUC LearningHub Pte Ltd.</li>
+                <li>Real Estate Salespersons (RES) Course — Life Mastery Academy Pte Ltd.</li>
                 <li>Diploma in Integrated Events Management — Republic Polytechnic</li>
             </ul>
         </div>
@@ -72,40 +76,56 @@
             <h3>Languages</h3>
             <ul>
                 <li>English — Fluent</li>
-                <li>Malay — Basic</li>
+                <li>Malay — Moderate</li>
             </ul>
         </div>
     </div>
 
     <div class="sec-label">Career Journey</div>
-    <div class="sec-title" style="margin-bottom: 24px;">Experience <span>Timeline</span></div>
-    <div class="timeline">
-        <div class="titem">
-            <div class="tdot">GS</div>
-            <div class="tcontent">
-                <div class="ttitle">DevOps and Cloud Engineer (Trainee)</div>
-                <div class="torg">Generation Singapore · Full-time</div>
-                <div class="tdate">MAR 2026 – JUN 2026 · Singapore · Remote</div>
-                <div class="tdesc">Built and deployed Azure cloud infrastructure using Terraform. Containerised applications using Docker. Developed CI/CD pipelines to automate build and deployment workflows. Worked in Agile teams using Git and GitHub for version control.</div>
-            </div>
+<div class="sec-title" style="margin-bottom: 24px;">Experience <span>Timeline</span></div>
+<div class="timeline">
+    <div class="titem">
+        <div class="tdot">GS</div>
+        <div class="tcontent">
+            <div class="ttitle">DevOps & Cloud Programme Trainee</div>
+            <div class="torg">Generation Singapore (Temasek Polytechnic) · Full-time</div>
+            <div class="tdate">MAR 2026 – JUN 2026 · Singapore · Remote</div>
+            <ul class="tbullets">
+                <li>Provisioned Azure cloud infrastructure including virtual networks, VMs and storage using Terraform</li>
+                <li>Containerised applications using Docker for consistent deployment across environments</li>
+                <li>Built CI/CD pipelines to automate build and deployment workflows</li>
+                <li>Applied Bash and Python scripting to support automation tasks</li>
+                <li>Worked in Agile teams using Git and GitHub for version control</li>
+            </ul>
         </div>
-        <div class="titem">
-            <div class="tdot">PN</div>
-            <div class="tcontent">
-                <div class="ttitle">Associate Director</div>
-                <div class="torg">PropNex Realty Pte Ltd · Full-time</div>
-                <div class="tdate">OCT 2022 – PRESENT · Singapore</div>
-                <div class="tdesc">Managed end-to-end property transactions for 30+ clients. Led high-stakes negotiations in time-sensitive environments. Mentored new agents on processes and client management. Awards: Growth Award (2025), Gold Achiever Award (2024).</div>
-            </div>
+    </div>
+    <div class="titem">
+        <div class="tdot">PN</div>
+        <div class="tcontent">
+            <div class="ttitle">Associate Director</div>
+            <div class="torg">PropNex Realty Pte Ltd · Full-time</div>
+            <div class="tdate">OCT 2022 – PRESENT · Singapore</div>
+            <ul class="tbullets">
+                <li>Managed end-to-end property transactions for 30+ clients across developers, legal teams and financial institutions</li>
+                <li>Analysed market data to provide strategic recommendations and structured solutions for complex client needs</li>
+                <li>Led high-stakes negotiations in time-sensitive, high-pressure environments</li>
+                <li>Mentored new agents on processes, client management and effective communication</li>
+                <li>Awards: Growth Award (2025), Gold Achiever Award (2024)</li>
+            </ul>
         </div>
-        <div class="titem">
-            <div class="tdot">AIA</div>
-            <div class="tcontent">
-                <div class="ttitle">Financial Services Consultant</div>
-                <div class="torg">AIA Singapore · Full-time</div>
-                <div class="tdate">MAY 2019 – OCT 2022 · Singapore</div>
-                <div class="tdesc">Advised clients on comprehensive financial planning. Managed a portfolio of clients while consistently achieving top-tier targets. Awards: MDRT Gold (2019), Headstart Qualifier (2019), Hawaii Convention 2020.</div>
-            </div>
+    </div>
+    <div class="titem">
+        <div class="tdot">AIA</div>
+        <div class="tcontent">
+            <div class="ttitle">Financial Services Consultant</div>
+            <div class="torg">AIA Singapore · Full-time</div>
+            <div class="tdate">MAY 2019 – OCT 2022 · Singapore</div>
+            <ul class="tbullets">
+                <li>Advised clients on comprehensive financial planning using structured analysis</li>
+                <li>Managed a client portfolio while consistently achieving top-tier performance targets</li>
+                <li>Communicated complex financial concepts clearly to support informed decision-making</li>
+                <li>Awards: MDRT Gold (2019), Headstart Qualifier (2019), Hawaii Convention 2020</li>
+            </ul>
         </div>
     </div>
 </div>
